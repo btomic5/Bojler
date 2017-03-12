@@ -79,5 +79,5 @@ void ICACHE_FLASH_ATTR user_init(void)
 	os_timer_setfn(&hello_timer, (os_timer_func_t *)hello_cb, (void *)0);
 	// void os_timer_arm(ETSTimer *ptimer,uint32_t milliseconds, bool repeat_flag)
 	os_timer_arm(&hello_timer, DELAY, 1);
-
+	// komentar
 }
