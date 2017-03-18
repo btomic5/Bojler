@@ -66,18 +66,34 @@ uint32 ICACHE_FLASH_ATTR user_rf_cal_sector_set(void)
 
 void ICACHE_FLASH_ATTR user_rf_pre_init(void)
 {
+
+}
+
+void scanCB(void *arg, STATUS status) {
+	struct bss_info *bssInfo;
+	bssInfo = (struct bss_info *)arg;
+	// skip the first in the chain … it is invalid
+	bssInfo = STAILQ_NEXT(bssInfo, next);
+	while(bssInfo != NULL) {
+		ets_uart_printf("ssid: %s\n", bssInfo->ssid);
+		bssInfo = STAILQ_NEXT(bssInfo, next);
+	}
+	// Set up a timer to send the message
+	os_timer_disarm(&hello_timer);
+	os_timer_setfn(&hello_timer, (os_timer_func_t *)hello_cb, (void *)0);
+	os_timer_arm(&hello_timer, DELAY, 1);
+}
+
+void ICACHE_FLASH_ATTR init_done() {
+	// Configure the UART
+//	uart_init(BIT_RATE_115200, BIT_RATE_115200);
+	// Ensure we are in station mode
+	wifi_set_opmode_current(STATION_MODE);
+	// Request a scan of the network calling "scanCB" on completion
+	wifi_station_scan(NULL, scanCB);
 }
 
 void ICACHE_FLASH_ATTR user_init(void)
 {
-	// Configure the UART
-	uart_init(BIT_RATE_115200, BIT_RATE_115200);
-	// Set up a timer to send the message
-	// os_timer_disarm(ETSTimer *ptimer)
-	os_timer_disarm(&hello_timer);
-	// os_timer_setfn(ETSTimer *ptimer, ETSTimerFunc *pfunction, void *parg)
-	os_timer_setfn(&hello_timer, (os_timer_func_t *)hello_cb, (void *)0);
-	// void os_timer_arm(ETSTimer *ptimer,uint32_t milliseconds, bool repeat_flag)
-	os_timer_arm(&hello_timer, DELAY, 1);
-	// komentar
+	system_init_done_cb(init_done);
 }

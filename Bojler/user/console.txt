@@ -1,0 +1,86 @@
+ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+
+load 0x40100000, len 27312, room 16 
+tail 0
+chksum 0xfb
+load 0x3ffe8000, len 884, room 8 
+tail 12
+chksum 0xb7
+ho 0 tail 12 room 4
+load 0x3ffe8380, len 344, room 12 
+tail 12
+chksum 0x15
+csum 0x15
+sy... error, use last saved param!
+rf cal sector: 1019
+rf[112] : 00
+rf[113] : 00
+rf[114] : 01
+
+SDK ver: 2.0.0(5a875ba) compiled @ Aug  9 2016 15:12:27
+phy ver: 1055, pp ver: 10.2
+
+mode : sta(5c:cf:7f:0e:26:8b)
+add if0
+scandone
+scandone
+ssid: INTERNET61
+ssid: Simonovic
+ssid: Iglenzi
+ssid: Bjeletic
+ssid: Ducaaa
+ssid: Rovcanin
+ssid: Veljko-Beogrid
+ssid: Jefimija
+ssid: Marinkovic
+ssid: Mateja
+ssid: markovic
+ssid: SLAVKO I MIRA
+ssid: HG530
+ssid: Vlajko
+ssid: BOJANA1
+ssid: Dir600
+ssid: Jelena
+ssid: UPC0045373
+ssid: linksys
+ssid: Dixy
+ssid: HG532e-Bambino
+ssid: istra
+ssid: Milica
+reconnect
+scandone
+no linksys found, reconnect after 1s
+reconnect
+Hello World!
+Hello World!
+scandone
+state: 0 -> 2 (b0)
+state: 2 -> 3 (0)
+state: 3 -> 5 (10)
+add 0
+aid 18
+cnt 
+
+connected with linksys, channel 11
+dhcp client start...
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+ip:192.168.1.107,mask:255.255.255.0,gw:192.168.1.1
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+pm open,type:2 0
+Hello World!
+Hello World!
+Hello World!
+Hello World!
+
+
+iz DHCP tabele na ruteru:
+
+ESP_0E268B	192.168.1.107	5C:CF:7F:0E:26:8B

@@ -1,5 +1,5 @@
 # Main settings includes
-include	../settings.mk
+include	C:/Espressif/examples/ESP8266/settings.mk
 
 # Individual project settings (Optional)
 #BOOT		= new
@@ -15,4 +15,4 @@ MODULES	= driver user
 LIBS	= c gcc hal phy pp net80211 lwip wpa main crypto
 
 # Root includes
-include	../common_nonos.mk
+include	C:/Espressif/examples/ESP8266/common_nonos.mk
