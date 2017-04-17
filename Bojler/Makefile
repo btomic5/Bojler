@@ -12,7 +12,8 @@ include	C:/Espressif/examples/ESP8266/settings.mk
 
 # Basic project settings
 MODULES	= driver user
-LIBS	= c gcc hal phy pp net80211 lwip wpa main crypto
+LIBS	= c gcc hal phy pp net80211 lwip wpa main upgrade ssl crypto
+VERBOSE=0
 
 # Root includes
 include	C:/Espressif/examples/ESP8266/common_nonos.mk
